@@ -63,7 +63,7 @@ hostname -I
 
 Note down the first IP address (e.g., `192.168.29.124`).
 
-## 📱 Step 2: Mobile App Setup (Flutter)
+## 📱 Step 3: Mobile App Setup (Flutter)
 
 ### Navigate to the app directory:
 
