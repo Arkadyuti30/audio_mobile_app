@@ -3,6 +3,7 @@ import shutil
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
+import random
 
 app = FastAPI()
 
@@ -37,7 +38,7 @@ async def upload_audio(
     try:
         # Generate a filename (Mimicking S3 Key)
         file_extension = file.filename.split('.')[-1]
-        safe_filename = f"{farmer_id}_{audio_id}.{file_extension}"
+        safe_filename = f"{audio_id}.{file_extension}"
         file_path = os.path.join(UPLOAD_DIR, safe_filename)
 
         # Save to local disk (Mimicking S3 Upload)
@@ -61,22 +62,19 @@ async def upload_audio(
 @app.get("/job/{job_id}", status_code=200)
 async def generate_analysis(job_id: str):
     # In production, this will make a call to Gemini 1.5 Flash, get the analysis & return the result
-    mock_results = {
-        "fmr_001_aud_001": "Maize quality refers to its suitability for intended use, judged by appearance (no mold, damage, discoloration), physical traits (size, breakage, cracks).",
-        "fmr_002_aud_001": "Potato phenotyping is the systematic measurement of potato plant and tuber traits (phenotypes) like yield, stress resistance, and quality.",
-        "fmr_003_aud_001": "Paddy (rice) phenotyping involves the systematic, high-throughput, and non-destructive measurement of physiological, biochemical, and morphological properties of the rice plant to enhance breeding, improve yield, and ensure stress tolerance."
-    }
+    mock_results = [
+        "Maize quality refers to its suitability for intended use, judged by appearance (no mold, damage, discoloration), physical traits (size, breakage, cracks).",
+        "Potato phenotyping is the systematic measurement of potato plant and tuber traits (phenotypes) like yield, stress resistance, and quality.",
+        "Paddy (rice) phenotyping involves the systematic, high-throughput, and non-destructive measurement of physiological, biochemical, and morphological properties of the rice plant to enhance breeding, improve yield, and ensure stress tolerance."
+    ]
 
     try:
-        if job_id in mock_results:
-            return {
-                "status": "success",
-                "audio_analysis": mock_results[job_id]
-            }
-        else:
-            return {
-                "status": "unable to generate analysis - incorrect job id"
-            }
+       
+        return {
+            "status": "success",
+            "transcription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "audio_analysis": random.choice(mock_results)
+        }
     except Exception as e:
         print(f"Error occured while analysis of audio: {e}")
         raise HTTPException(status_code=500, detail=f"AI analysis of audio failed. Error: {e}")
