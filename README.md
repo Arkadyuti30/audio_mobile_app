@@ -52,7 +52,7 @@ pip install fastapi uvicorn python-multipart
 You must listen on `0.0.0.0` so your physical device can communicate with your laptop over the local network.
 
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### Find your Laptop's Local IP:
