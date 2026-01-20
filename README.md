@@ -7,6 +7,8 @@ This project is a comprehensive **Offline-First** solution for recording agricul
 - **farm_friend_audio/**: The Flutter mobile application.
 - **backend/**: The Python FastAPI server.
 - **architecture_proposal.pdf**: Documentation regarding the system design.
+- **project_final_writeup.pdf**: Short write up on final thoughts, future challenges.
+- **farm_friend_audio/lib/core/services/offline_logic_service.dart**: Offline / Edge Logic.
 
 ## 🚀 Prerequisites
 
