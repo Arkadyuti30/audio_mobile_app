@@ -13,7 +13,7 @@ This project is a comprehensive **Offline-First** solution for recording agricul
 ## 📱 App Demo
 
 ### App UI Screenshot
-<img width="500" height="342" alt="image" src="https://github.com/user-attachments/assets/4a5e049a-083a-44f4-9f4e-814c07fb5c5c" />
+<img width="292" height="550" alt="image" src="https://github.com/user-attachments/assets/4a5e049a-083a-44f4-9f4e-814c07fb5c5c" />
 
 ### Video Demo
 https://github.com/user-attachments/assets/b24e6790-d4dd-4636-a447-35a957c54db1
