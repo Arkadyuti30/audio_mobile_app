@@ -17,7 +17,12 @@ Ensure you have the following installed on your Ubuntu machine:
 - Git
 - A Physical Android/iOS Device (Recommended for audio features)
 
-## 🛠️ Step 1: Backend Setup (Python FastAPI)
+## 🖥️ Step 1: Clone this repo on your local
+```bash
+git clone https://github.com/Arkadyuti30/audio_mobile_app.git
+```
+
+## 🛠️ Step 2: Backend Setup (Python FastAPI)
 
 The backend handles multi-part audio file uploads and serves analyzed results.
 
