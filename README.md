@@ -1,4 +1,3 @@
-```markdown
 # Farm Friend Audio App
 
 This project is a comprehensive **Offline-First** solution for recording agricultural audio data in remote areas, managing local storage, and synchronizing with a backend for AI analysis once internet connectivity is available.
